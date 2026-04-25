@@ -1,10 +1,10 @@
 from functools import lru_cache
-from transformers import pipeline
 
 MODEL_NAME = "distilbert/distilbert-base-uncased-finetuned-sst-2-english"
 
 @lru_cache(maxsize=1)
 def get_sentiment_pipeline():
+    from transformers import pipeline
     return pipeline("sentiment-analysis", model=MODEL_NAME)
 
 def analyze_sentiment(text: str) -> dict:
