@@ -5,6 +5,7 @@ from app.config import get_settings
 from app.routers.marketing import router as marketing_router
 from app.routers.products import router as products_router
 from app.routers.trends import router as trends_router
+from app.routers.ai import router as ai_router
 
 settings = get_settings()
 
@@ -31,3 +32,4 @@ def health_check():
 app.include_router(marketing_router)
 app.include_router(products_router)
 app.include_router(trends_router)
+app.include_router(ai_router)
