@@ -1,5 +1,4 @@
 import os
-from google import genai
 
 
 def build_prompt(product, reviews, summary) -> str:
@@ -73,6 +72,7 @@ def generate_recommendation(prompt: str) -> str:
         )
 
     try:
+        from google import genai
         client = genai.Client(api_key=api_key)
         response = client.models.generate_content(
             model="gemini-1.5-flash",
